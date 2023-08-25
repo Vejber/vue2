@@ -322,10 +322,13 @@ button{
         width: 100vw;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
         background-color: rgba(244, 240, 236, 1);
-        position: absolute;
+        // position: absolute;
         left: 0px;
+        justify-content: center;
+        align-self: center;
+        gap: 100px;
 
         &_block{
             display: flex;
