@@ -288,10 +288,12 @@ button:hover {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   background-color: rgb(244, 240, 236);
-  position: absolute;
   left: 0px;
+  justify-content: center;
+  align-self: center;
+  gap: 105px;
+  margin-bottom: 95px;
 }
 .main__info_block {
   display: flex;
