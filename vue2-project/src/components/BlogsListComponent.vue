@@ -26,7 +26,7 @@ import BlogDetailsComponent from './BlogDetailsComponent.vue';
                 {
                     id: 1,
                     header: '#1 Let’s Get Solution for Building Construction Work',
-                    img: 'img/mainBlog1.png',
+                    img: 'mainBlog1.png',
                     date: '26 December,2022',
                     crumbs: 'Interior / Home / Decore',
                     text:'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don\'t look even slightly believable.\n' +
@@ -39,13 +39,13 @@ import BlogDetailsComponent from './BlogDetailsComponent.vue';
                         '\n' +
                         '2. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n' +
                         '3. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.\n',
-                    imgDetails: 'img/detailsBlog1.png',
+                    imgDetails: 'detailsBlog1.png',
                     subTextDetails:'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.',
                 },
                 {
                     id: 2,
                     header: '#2 Let’s Get Solution for Building Construction Work',
-                    img: 'img/mainBlog2.jpg',
+                    img: 'mainBlog2.jpg',
                     date: '26 December,2023',
                     crumbs: 'Interior / Home / Decore',
                     text:'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don\'t look even slightly believable.\n' +
@@ -54,13 +54,13 @@ import BlogDetailsComponent from './BlogDetailsComponent.vue';
                     tags: ['Kitchen', 'Bedroom', 'Building'],
                     headerDetails: '#2 Design sprints are great',
                     textDetails: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.  \n                    1. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered. \n                    2. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered. \n                    3. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered. ',
-                    imgDetails: 'img/detailsBlog2.jpg',
+                    imgDetails: 'detailsBlog2.jpg',
                     subTextDetails:'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.',
                 },
                 {
                     id: 3,
                     header: '#3 Let’s Get Solution for Building Construction Work',
-                    img: 'img/mainBlog3.jpg',
+                    img: 'mainBlog3.jpg',
                     date: '26 December,2022',
                     crumbs: 'Interior / Home / Decore',
                     text:'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don\'t look even slightly believable.\n' +
@@ -69,7 +69,7 @@ import BlogDetailsComponent from './BlogDetailsComponent.vue';
                     tags: ['Kitchen', 'Building', 'Kitchen Planning'],
                     headerDetails: '#3 Design sprints are great',
                     textDetails: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.  \n                    1. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered. \n                    2. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered. \n                    3. Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered. ',
-                    imgDetails: 'img/detailsBlog3.jpg',
+                    imgDetails: 'detailsBlog3.jpg',
                     subTextDetails:'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.',
                 },
             ],

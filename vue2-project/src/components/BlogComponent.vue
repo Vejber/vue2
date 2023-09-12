@@ -5,7 +5,7 @@
                 <p class="blog-header__text">{{ blog.header }}</p>
             </div>
             <div class="blog-content-img-wrapper">
-                <img class="blog-content-img" :src="blog.img" :alt="blog-img">
+                <img class="blog-content-img" :src="require(`@/assets/img/${blog.img}`)" :alt="blog-img">
             </div>
             <div class="blog-footer">
                 <div class="blog-date">

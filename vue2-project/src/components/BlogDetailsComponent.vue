@@ -19,7 +19,7 @@
             </div>
             <div class="blog-details-content-sub">
                 <div class="blog-details-content-sub-img-wrapper">
-                    <img class="blog-details-content-sub-img" :src="blog.imgDetails" :alt="sub">
+                    <img class="blog-details-content-sub-img" :src="require(`@/assets/img/${blog.imgDetails}`)" :alt="sub">
                 </div>
                 <p class="blog-details-content-sub__text">
                     {{ blog.subTextDetails }}

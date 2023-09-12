@@ -2,14 +2,17 @@
   <div id="app">
     <!-- <IndexPage :cards="cards" /> -->
     <!-- <BlogPage :cards="cards"/> -->
-    <BlogDetailsPage />
+    <!-- <BlogDetailsPage /> -->
+    <CategoriesPage :cards="categoriesCards"/>
   </div>
 </template>
 
 <script>
+import CategoriesPage from './components/pages/CategoriesPage.vue';
+
 // import IndexPage from './components/pages/IndexPage.vue';
 // import BlogPage from './components/pages/BlogPage.vue';
-import BlogDetailsPage from './components/pages/BlogDetailsPage.vue';
+// import BlogDetailsPage from './components/pages/BlogDetailsPage.vue';
 // import image from '@/assets/img/'
 
 export default {
@@ -17,8 +20,9 @@ export default {
   components: {
     // IndexPage,
     // BlogPage
-    BlogDetailsPage
-  },
+    // BlogDetailsPage,
+    CategoriesPage
+},
 
   data() {
     return {
@@ -33,7 +37,8 @@ export default {
                         // imgSrc: 'assets/img/kitchenDesign.png',
                         // imgSrc: 'vue2-project/src/assets/img/kitchenDesign.png',
                         // imgSrc: '../assets/img/kitchenDesign.png',
-                        imgSrc: '/Users/zenecka/vue2/vue2-project/src/assets/img/kitchenDesign.png',
+                        // imgSrc: '/Users/zenecka/vue2/vue2-project/src/assets/img/kitchenDesign.png',
+                        imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -72,7 +77,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingRoomDesign.png',
+                        // imgSrc: 'assets/img/livingRoomDesign.png',
+                        imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -110,7 +116,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign.png',
+                        // imgSrc: 'assets/img/interiorDesign.png',
+                        imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -148,7 +155,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign2.png',
+                        // imgSrc: 'assets/img/kitchenDesign2.png',
+                        imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -186,7 +194,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingDesign2.png',
+                        // imgSrc: 'assets/img/livingDesign2.png',
+                        imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -224,7 +233,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign2.png',
+                        // imgSrc: 'assets/img/interiorDesign2.png',
+                        imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -264,7 +274,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign.png',
+                        // imgSrc: 'assets/img/kitchenDesign.png',
+                        imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -303,7 +314,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingRoomDesign.png',
+                        // imgSrc: 'assets/img/livingRoomDesign.png',
+                        imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -341,7 +353,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign.png',
+                        // imgSrc: 'assets/img/interiorDesign.png',
+                        imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -379,7 +392,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign2.png',
+                        // imgSrc: 'assets/img/kitchenDesign2.png',
+                        imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -417,7 +431,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingDesign2.png',
+                        // imgSrc: 'assets/img/livingDesign2.png',
+                        imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -455,7 +470,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign2.png',
+                        // imgSrc: 'assets/img/interiorDesign2.png',
+                        imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -495,7 +511,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign.png',
+                        // imgSrc: 'assets/img/kitchenDesign.png',
+                        imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -534,7 +551,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingRoomDesign.png',
+                        // imgSrc: 'assets/img/livingRoomDesign.png',
+                        imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -572,7 +590,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign.png',
+                        // imgSrc: 'assets/img/interiorDesign.png',
+                        imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -610,7 +629,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign2.png',
+                        // imgSrc: 'assets/img/kitchenDesign2.png',
+                        imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -648,7 +668,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingDesign2.png',
+                        // imgSrc: 'assets/img/livingDesign2.png',
+                        imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -686,7 +707,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign2.png',
+                        // imgSrc: 'assets/img/interiorDesign2.png',
+                        imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -726,7 +748,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign.png',
+                        // imgSrc: 'assets/img/kitchenDesign.png',
+                        imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -765,7 +788,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingRoomDesign.png',
+                        // imgSrc: 'assets/img/livingRoomDesign.png',
+                        imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -803,7 +827,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign.png',
+                        // imgSrc: 'assets/img/interiorDesign.png',
+                        imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -841,7 +866,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/kitchenDesign2.png',
+                        // imgSrc: 'assets/img/kitchenDesign2.png',
+                        imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -879,7 +905,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/livingDesign2.png',
+                        // imgSrc: 'assets/img/livingDesign2.png',
+                        imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -917,7 +944,8 @@ export default {
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        imgSrc: 'assets/img/interiorDesign2.png',
+                        // imgSrc: 'assets/img/interiorDesign2.png',
+                        imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
                         divClass: 'card-img-text',
@@ -950,6 +978,379 @@ export default {
                 
             },
         ],
+
+        categoriesCards:{
+          
+          'Bathroom':{
+            
+            card1:{
+              imgSrc: 'categories-bathroom1.jpg',
+              imgAlt: 'bathroom1',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card1',
+            },
+            card2:{
+              imgSrc: 'categories-bathroom2.jpg',
+              imgAlt: 'bathroom2',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card2',
+            },
+            card3:{
+              imgSrc: 'categories-bathroom3.jpg',
+              imgAlt: 'bathroom3',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card3',
+            },
+            card4:{
+              imgSrc: 'categories-bathroom4.jpg',
+              imgAlt: 'bathroom4',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card4',
+            },
+            card5:{
+              imgSrc: 'categories-bathroom5.jpg',
+              imgAlt: 'bathroom5',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card5',
+            },
+            card6:{
+              imgSrc: 'categories-bathroom6.jpg',
+              imgAlt: 'bathroom6',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card6',
+            },
+            card7:{
+              imgSrc: 'categories-bathroom7.jpg',
+              imgAlt: 'bathroom7',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card7',
+            },
+            card8:{
+              imgSrc: 'categories-bathroom8.jpg',
+              imgAlt: 'bathroom8',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal Bathroom',
+              class: 'grid-card card8',
+            },
+            
+          },
+          'Bedroom':{
+            
+            card1:{
+              imgSrc: 'bedroom1.jpg',
+              imgAlt: 'bedroom1',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card1',
+            },
+            card2:{
+              imgSrc: 'bedroom2.jpg',
+              imgAlt: 'bedroom2',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card2',
+            },
+            card3:{
+              imgSrc: 'bedroom3.jpg',
+              imgAlt: 'bedroom3',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card3',
+            },
+            card4:{
+              imgSrc: 'bedroom4.jpg',
+              imgAlt: 'bedroom4',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card4',
+            },
+            card5:{
+              imgSrc: 'bedroom5.jpg',
+              imgAlt: 'bedroom5',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card5',
+            },
+            card6:{
+              imgSrc: 'bedroom6.jpg',
+              imgAlt: 'bedroom6',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card6',
+            },
+            card7:{
+              imgSrc: 'bedroom7.jpg',
+              imgAlt: 'bedroom7',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card7',
+            },
+            card8:{
+              imgSrc: 'bedroom8.jpg',
+              imgAlt: 'bedroom8',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal bedroom',
+              class: 'grid-card card8',
+            },
+            
+          },
+          'Kitchen':{
+            
+            card1:{
+              imgSrc: 'kitchen1.jpeg',
+              imgAlt: 'kitchen1',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card1',
+            },
+            card2:{
+              imgSrc: 'kitchen2.jpeg',
+              imgAlt: 'kitchen2',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card2',
+            },
+            card3:{
+              imgSrc: 'kitchen3.jpeg',
+              imgAlt: 'kitchen3',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card3',
+            },
+            card4:{
+              imgSrc: 'kitchen4.jpeg',
+              imgAlt: 'kitchen4',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card4',
+            },
+            card5:{
+              imgSrc: 'kitchen5.jpeg',
+              imgAlt: 'kitchen5',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card5',
+            },
+            card6:{
+              imgSrc: 'kitchen6.jpeg',
+              imgAlt: 'kitchen6',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card6',
+            },
+            card7:{
+              imgSrc: 'kitchen7.jpeg',
+              imgAlt: 'kitchen7',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card7',
+            },
+            card8:{
+              imgSrc: 'kitchen8.jpeg',
+              imgAlt: 'kitchen8',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal kitchen',
+              class: 'grid-card card8',
+            },
+            
+          },
+          'Living Area':{
+            
+            card1:{
+              imgSrc: 'livingArea1.jpeg',
+              imgAlt: 'livingArea1',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card1',
+            },
+            card2:{
+              imgSrc: 'livingArea2.jpeg',
+              imgAlt: 'livingArea2',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card2',
+            },
+            card3:{
+              imgSrc: 'livingArea3.jpeg',
+              imgAlt: 'livingArea3',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card3',
+            },
+            card4:{
+              imgSrc: 'livingArea4.jpeg',
+              imgAlt: 'livingArea4',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card4',
+            },
+            card5:{
+              imgSrc: 'livingArea5.jpeg',
+              imgAlt: 'livingArea5',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card5',
+            },
+            card6:{
+              imgSrc: 'livingArea6.jpeg',
+              imgAlt: 'livingArea6',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card6',
+            },
+            card7:{
+              imgSrc: 'livingArea7.jpeg',
+              imgAlt: 'livingArea7',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card7',
+            },
+            card8:{
+              imgSrc: 'livingArea8.jpeg',
+              imgAlt: 'livingArea8',
+              li:{
+                li1:'Decor',
+                li2:'/',
+                li3:'Architecture',
+              },
+              h3:'Minimal living area',
+              class: 'grid-card card8',
+            },
+            
+          },
+          
+        }
     };
   }
 }
@@ -1379,6 +1780,10 @@ button:hover {
   justify-content: center;
   background-position: center;
 }
+
+.blog-top__categories{
+  background-image: url(../src/assets/img/categories-page-top.jpg);
+}
 .blog-top__box {
   background: white;
   width: 40%;
@@ -1666,5 +2071,41 @@ button:hover {
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* .categories-tabs{
+        margin-top: 200px;
+        margin-bottom: 60px;
+        height: 75px;
+        display: flex;
+        border: 1px solid rgba(205, 162, 116, 1);
+        border-radius: 20px;
+        width: 40vw;
+        justify-content: space-evenly;
+}
+
+.categories-tabs button{
+  color: #292F36;
+  text-align: center;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: 0.36px;
+  background-color: unset;
+  border: 0px;
+  border-radius: 20px;
+  width: 25%;
+}
+.categories-tabs button:focus{
+  background-color: rgba(205, 162, 116, 1);
+  color: white;
+}
+
+.categories-catalog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
 </style>

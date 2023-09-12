@@ -3,7 +3,7 @@
           <div v-for="(card) in cards" :key="card.id" :class="card.parentClass"><!-- class="main__cards_card trio" -->
               
               <div :class="card.child1.divImgClass"><!-- <div class="main__cards_card_imgs"> -->
-                  <img :src="card.child1.imgSrc" :alt="card.child1.imgAlt" :class="card.child1.imgClass">
+                  <img :src="require(`@/assets/img/${card.child1.imgSrc}`)" :alt="card.child1.imgAlt" :class="card.child1.imgClass">
                   <div :class="card.child1.divClass">{{card.child1.divText}}</div>
               </div>
               <div :class="card.child2.parentDivClass"> <!-- <div class="card__info" -->
