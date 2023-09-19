@@ -71,7 +71,6 @@
 import HeaderComponent from '../HeaderComponent.vue';
 import CardsComponent from '../CardsComponent.vue';
 import FooterComponent from '../FooterComponent.vue';
-// import FooterComponent from '../FooterComponent.vue';
 export default {
     name: 'BlogPage',
     props:['cards'],
@@ -83,7 +82,6 @@ export default {
     data(){
         return{}
     }
-    // components: { FooterComponent }
 }
 </script>
 

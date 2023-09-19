@@ -3,16 +3,19 @@
     <!-- <IndexPage :cards="cards" /> -->
     <!-- <BlogPage :cards="cards"/> -->
     <!-- <BlogDetailsPage /> -->
-    <CategoriesPage :cards="categoriesCards"/>
+    <!-- <CategoriesPage :cards="categoriesCards"/> -->
+    <!-- <ProjectDetailsPage :carousel_data="projectText.sliderItems"/> -->
+    <ProjectDetailsPage />
   </div>
 </template>
 
 <script>
-import CategoriesPage from './components/pages/CategoriesPage.vue';
-
+import { mapMutations, mapState, mapGetters } from 'vuex';
+// import CategoriesPage from './components/pages/CategoriesPage.vue';
 // import IndexPage from './components/pages/IndexPage.vue';
 // import BlogPage from './components/pages/BlogPage.vue';
 // import BlogDetailsPage from './components/pages/BlogDetailsPage.vue';
+import ProjectDetailsPage from './components/pages/ProjectDetailsPage.vue';
 // import image from '@/assets/img/'
 
 export default {
@@ -21,1338 +24,1351 @@ export default {
     // IndexPage,
     // BlogPage
     // BlogDetailsPage,
-    CategoriesPage
+    // CategoriesPage,
+    ProjectDetailsPage
 },
 
   data() {
     return {
-        svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-        cards:[
-            {
-                id: 1,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
-                        // imgSrc: 'vue2-project/src/assets/img/kitchenDesign.png',
-                        // imgSrc: '../assets/img/kitchenDesign.png',
-                        // imgSrc: '/Users/zenecka/vue2/vue2-project/src/assets/img/kitchenDesign.png',
-                        imgSrc: 'kitchenDesign.png',
-                        imgAlt: 'kitchenDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        // svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        // cards:[
+        //     {
+        //         id: 1,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign.png',
+        //                 // imgSrc: 'vue2-project/src/assets/img/kitchenDesign.png',
+        //                 // imgSrc: '../assets/img/kitchenDesign.png',
+        //                 // imgSrc: '/Users/zenecka/vue2/vue2-project/src/assets/img/kitchenDesign.png',
+        //                 imgSrc: 'kitchenDesign.png',
+        //                 imgAlt: 'kitchenDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
                 
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-                                            }
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: this.svg,
+        //                                         // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 2,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
-                        imgSrc: 'livingRoomDesign.png',
-                        imgAlt: 'livingRoomDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 2,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingRoomDesign.png',
+        //                 imgSrc: 'livingRoomDesign.png',
+        //                 imgAlt: 'livingRoomDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas.',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas.',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 3,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
-                        imgSrc: 'interiorDesign.png',
-                        imgAlt: 'interiorDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 3,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign.png',
+        //                 imgSrc: 'interiorDesign.png',
+        //                 imgAlt: 'interiorDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 4,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
-                        imgSrc: 'kitchenDesign2.png',
-                        imgAlt: 'kitchenDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        //     {
+        //         id: 4,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign2.png',
+        //                 imgSrc: 'kitchenDesign2.png',
+        //                 imgAlt: 'kitchenDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 5,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
-                        imgSrc: 'livingDesign2.png',
-                        imgAlt: 'livingDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 5,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingDesign2.png',
+        //                 imgSrc: 'livingDesign2.png',
+        //                 imgAlt: 'livingDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 6,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
-                        imgSrc: 'interiorDesign2.png',
-                        imgAlt: 'interiorDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 6,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign2.png',
+        //                 imgSrc: 'interiorDesign2.png',
+        //                 imgAlt: 'interiorDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-        ],
-        cardsPage2:[
-            {
-                id: 1,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
-                        imgSrc: 'kitchenDesign.png',
-                        imgAlt: 'kitchenDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        // ],
+        // cardsPage2:[
+        //     {
+        //         id: 1,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign.png',
+        //                 imgSrc: 'kitchenDesign.png',
+        //                 imgAlt: 'kitchenDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
                 
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-                                            }
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: this.svg,
+        //                                         // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 2,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
-                        imgSrc: 'livingRoomDesign.png',
-                        imgAlt: 'livingRoomDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 2,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingRoomDesign.png',
+        //                 imgSrc: 'livingRoomDesign.png',
+        //                 imgAlt: 'livingRoomDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas.',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas.',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 3,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
-                        imgSrc: 'interiorDesign.png',
-                        imgAlt: 'interiorDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 3,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign.png',
+        //                 imgSrc: 'interiorDesign.png',
+        //                 imgAlt: 'interiorDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 4,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
-                        imgSrc: 'kitchenDesign2.png',
-                        imgAlt: 'kitchenDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        //     {
+        //         id: 4,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign2.png',
+        //                 imgSrc: 'kitchenDesign2.png',
+        //                 imgAlt: 'kitchenDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 5,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
-                        imgSrc: 'livingDesign2.png',
-                        imgAlt: 'livingDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 5,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingDesign2.png',
+        //                 imgSrc: 'livingDesign2.png',
+        //                 imgAlt: 'livingDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 6,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
-                        imgSrc: 'interiorDesign2.png',
-                        imgAlt: 'interiorDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 6,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign2.png',
+        //                 imgSrc: 'interiorDesign2.png',
+        //                 imgAlt: 'interiorDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-        ],
-        cardsPage3:[
-            {
-                id: 1,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
-                        imgSrc: 'kitchenDesign.png',
-                        imgAlt: 'kitchenDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        // ],
+        // cardsPage3:[
+        //     {
+        //         id: 1,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign.png',
+        //                 imgSrc: 'kitchenDesign.png',
+        //                 imgAlt: 'kitchenDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
                 
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-                                            }
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: this.svg,
+        //                                         // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 2,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
-                        imgSrc: 'livingRoomDesign.png',
-                        imgAlt: 'livingRoomDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 2,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingRoomDesign.png',
+        //                 imgSrc: 'livingRoomDesign.png',
+        //                 imgAlt: 'livingRoomDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas.',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas.',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 3,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
-                        imgSrc: 'interiorDesign.png',
-                        imgAlt: 'interiorDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 3,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign.png',
+        //                 imgSrc: 'interiorDesign.png',
+        //                 imgAlt: 'interiorDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 4,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
-                        imgSrc: 'kitchenDesign2.png',
-                        imgAlt: 'kitchenDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        //     {
+        //         id: 4,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign2.png',
+        //                 imgSrc: 'kitchenDesign2.png',
+        //                 imgAlt: 'kitchenDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 5,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
-                        imgSrc: 'livingDesign2.png',
-                        imgAlt: 'livingDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 5,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingDesign2.png',
+        //                 imgSrc: 'livingDesign2.png',
+        //                 imgAlt: 'livingDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 6,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
-                        imgSrc: 'interiorDesign2.png',
-                        imgAlt: 'interiorDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 6,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign2.png',
+        //                 imgSrc: 'interiorDesign2.png',
+        //                 imgAlt: 'interiorDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-        ],
-        cardsPage4:[
-            {
-                id: 1,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
-                        imgSrc: 'kitchenDesign.png',
-                        imgAlt: 'kitchenDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        // ],
+        // cardsPage4:[
+        //     {
+        //         id: 1,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign.png',
+        //                 imgSrc: 'kitchenDesign.png',
+        //                 imgAlt: 'kitchenDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
                 
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-                                            }
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: this.svg,
+        //                                         // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 2,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
-                        imgSrc: 'livingRoomDesign.png',
-                        imgAlt: 'livingRoomDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 2,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingRoomDesign.png',
+        //                 imgSrc: 'livingRoomDesign.png',
+        //                 imgAlt: 'livingRoomDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas.',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas.',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 3,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
-                        imgSrc: 'interiorDesign.png',
-                        imgAlt: 'interiorDesign',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 3,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign.png',
+        //                 imgSrc: 'interiorDesign.png',
+        //                 imgAlt: 'interiorDesign',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 4,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
-                        imgSrc: 'kitchenDesign2.png',
-                        imgAlt: 'kitchenDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Kitchan Design',
-                    },
+        //     },
+        //     {
+        //         id: 4,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/kitchenDesign2.png',
+        //                 imgSrc: 'kitchenDesign2.png',
+        //                 imgAlt: 'kitchenDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Kitchan Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Let’s Get Solution For Building Construction Work',
-                                p: 
-                                    {
-                                        text: '26 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Let’s Get Solution For Building Construction Work',
+        //                         p: 
+        //                             {
+        //                                 text: '26 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 5,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
-                        imgSrc: 'livingDesign2.png',
-                        imgAlt: 'livingDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Living Design',
-                    },
+        //     },
+        //     {
+        //         id: 5,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/livingDesign2.png',
+        //                 imgSrc: 'livingDesign2.png',
+        //                 imgAlt: 'livingDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Living Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Low Cost Latest Invented Interior Designing Ideas',
-                                p: 
-                                    {
-                                        text: '22 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Low Cost Latest Invented Interior Designing Ideas',
+        //                         p: 
+        //                             {
+        //                                 text: '22 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-            {
-                id: 6,
-                parentClass: 'main__cards_card trio',
-                child1:
-                    {
-                        divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
-                        imgSrc: 'interiorDesign2.png',
-                        imgAlt: 'interiorDesign2',
-                        imgClass: 'card__img-trio',
-                        divClass: 'card-img-text',
-                        divText: 'Interior Design',
-                    },
+        //     },
+        //     {
+        //         id: 6,
+        //         parentClass: 'main__cards_card trio',
+        //         child1:
+        //             {
+        //                 divImgClass: 'main__cards_card_imgs',
+        //                 // imgSrc: 'assets/img/interiorDesign2.png',
+        //                 imgSrc: 'interiorDesign2.png',
+        //                 imgAlt: 'interiorDesign2',
+        //                 imgClass: 'card__img-trio',
+        //                 divClass: 'card-img-text',
+        //                 divText: 'Interior Design',
+        //             },
 
-                child2: 
-                    {
-                        parentDivClass: 'card__info',
-                        childDiv:
-                            {
-                                class: 'card__info_text',
-                                h2: 'Best For Any Office & Business Interior Solution',
-                                p: 
-                                    {
-                                        text: '25 December,2022 ',
-                                        a: 
-                                            {
-                                                href: '#',
-                                                class: 'card__button',
-                                                svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        //         child2: 
+        //             {
+        //                 parentDivClass: 'card__info',
+        //                 childDiv:
+        //                     {
+        //                         class: 'card__info_text',
+        //                         h2: 'Best For Any Office & Business Interior Solution',
+        //                         p: 
+        //                             {
+        //                                 text: '25 December,2022 ',
+        //                                 a: 
+        //                                     {
+        //                                         href: '#',
+        //                                         class: 'card__button',
+        //                                         svg: '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
-                                            }
+        //                                     }
                                         
-                                    }
+        //                             }
                                 
-                            }
+        //                     }
                         
-                    },
+        //             },
                 
-            },
-        ],
+        //     },
+        // ],
 
-        categoriesCards:{
+        // categoriesCards:{
           
-          'Bathroom':{
+        //   'Bathroom':{
             
-            card1:{
-              imgSrc: 'categories-bathroom1.jpg',
-              imgAlt: 'bathroom1',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card1',
-            },
-            card2:{
-              imgSrc: 'categories-bathroom2.jpg',
-              imgAlt: 'bathroom2',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card2',
-            },
-            card3:{
-              imgSrc: 'categories-bathroom3.jpg',
-              imgAlt: 'bathroom3',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card3',
-            },
-            card4:{
-              imgSrc: 'categories-bathroom4.jpg',
-              imgAlt: 'bathroom4',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card4',
-            },
-            card5:{
-              imgSrc: 'categories-bathroom5.jpg',
-              imgAlt: 'bathroom5',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card5',
-            },
-            card6:{
-              imgSrc: 'categories-bathroom6.jpg',
-              imgAlt: 'bathroom6',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card6',
-            },
-            card7:{
-              imgSrc: 'categories-bathroom7.jpg',
-              imgAlt: 'bathroom7',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card7',
-            },
-            card8:{
-              imgSrc: 'categories-bathroom8.jpg',
-              imgAlt: 'bathroom8',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal Bathroom',
-              class: 'grid-card card8',
-            },
+        //     card1:{
+        //       imgSrc: 'categories-bathroom1.jpg',
+        //       imgAlt: 'bathroom1',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card1',
+        //     },
+        //     card2:{
+        //       imgSrc: 'categories-bathroom2.jpg',
+        //       imgAlt: 'bathroom2',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card2',
+        //     },
+        //     card3:{
+        //       imgSrc: 'categories-bathroom3.jpg',
+        //       imgAlt: 'bathroom3',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card3',
+        //     },
+        //     card4:{
+        //       imgSrc: 'categories-bathroom4.jpg',
+        //       imgAlt: 'bathroom4',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card4',
+        //     },
+        //     card5:{
+        //       imgSrc: 'categories-bathroom5.jpg',
+        //       imgAlt: 'bathroom5',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card5',
+        //     },
+        //     card6:{
+        //       imgSrc: 'categories-bathroom6.jpg',
+        //       imgAlt: 'bathroom6',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card6',
+        //     },
+        //     card7:{
+        //       imgSrc: 'categories-bathroom7.jpg',
+        //       imgAlt: 'bathroom7',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card7',
+        //     },
+        //     card8:{
+        //       imgSrc: 'categories-bathroom8.jpg',
+        //       imgAlt: 'bathroom8',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal Bathroom',
+        //       class: 'grid-card card8',
+        //     },
             
-          },
-          'Bedroom':{
+        //   },
+        //   'Bedroom':{
             
-            card1:{
-              imgSrc: 'bedroom1.jpg',
-              imgAlt: 'bedroom1',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card1',
-            },
-            card2:{
-              imgSrc: 'bedroom2.jpg',
-              imgAlt: 'bedroom2',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card2',
-            },
-            card3:{
-              imgSrc: 'bedroom3.jpg',
-              imgAlt: 'bedroom3',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card3',
-            },
-            card4:{
-              imgSrc: 'bedroom4.jpg',
-              imgAlt: 'bedroom4',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card4',
-            },
-            card5:{
-              imgSrc: 'bedroom5.jpg',
-              imgAlt: 'bedroom5',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card5',
-            },
-            card6:{
-              imgSrc: 'bedroom6.jpg',
-              imgAlt: 'bedroom6',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card6',
-            },
-            card7:{
-              imgSrc: 'bedroom7.jpg',
-              imgAlt: 'bedroom7',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card7',
-            },
-            card8:{
-              imgSrc: 'bedroom8.jpg',
-              imgAlt: 'bedroom8',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal bedroom',
-              class: 'grid-card card8',
-            },
+        //     card1:{
+        //       imgSrc: 'bedroom1.jpg',
+        //       imgAlt: 'bedroom1',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card1',
+        //     },
+        //     card2:{
+        //       imgSrc: 'bedroom2.jpg',
+        //       imgAlt: 'bedroom2',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card2',
+        //     },
+        //     card3:{
+        //       imgSrc: 'bedroom3.jpg',
+        //       imgAlt: 'bedroom3',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card3',
+        //     },
+        //     card4:{
+        //       imgSrc: 'bedroom4.jpg',
+        //       imgAlt: 'bedroom4',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card4',
+        //     },
+        //     card5:{
+        //       imgSrc: 'bedroom5.jpg',
+        //       imgAlt: 'bedroom5',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card5',
+        //     },
+        //     card6:{
+        //       imgSrc: 'bedroom6.jpg',
+        //       imgAlt: 'bedroom6',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card6',
+        //     },
+        //     card7:{
+        //       imgSrc: 'bedroom7.jpg',
+        //       imgAlt: 'bedroom7',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card7',
+        //     },
+        //     card8:{
+        //       imgSrc: 'bedroom8.jpg',
+        //       imgAlt: 'bedroom8',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal bedroom',
+        //       class: 'grid-card card8',
+        //     },
             
-          },
-          'Kitchen':{
+        //   },
+        //   'Kitchen':{
             
-            card1:{
-              imgSrc: 'kitchen1.jpeg',
-              imgAlt: 'kitchen1',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card1',
-            },
-            card2:{
-              imgSrc: 'kitchen2.jpeg',
-              imgAlt: 'kitchen2',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card2',
-            },
-            card3:{
-              imgSrc: 'kitchen3.jpeg',
-              imgAlt: 'kitchen3',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card3',
-            },
-            card4:{
-              imgSrc: 'kitchen4.jpeg',
-              imgAlt: 'kitchen4',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card4',
-            },
-            card5:{
-              imgSrc: 'kitchen5.jpeg',
-              imgAlt: 'kitchen5',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card5',
-            },
-            card6:{
-              imgSrc: 'kitchen6.jpeg',
-              imgAlt: 'kitchen6',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card6',
-            },
-            card7:{
-              imgSrc: 'kitchen7.jpeg',
-              imgAlt: 'kitchen7',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card7',
-            },
-            card8:{
-              imgSrc: 'kitchen8.jpeg',
-              imgAlt: 'kitchen8',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal kitchen',
-              class: 'grid-card card8',
-            },
+        //     card1:{
+        //       imgSrc: 'kitchen1.jpeg',
+        //       imgAlt: 'kitchen1',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card1',
+        //     },
+        //     card2:{
+        //       imgSrc: 'kitchen2.jpeg',
+        //       imgAlt: 'kitchen2',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card2',
+        //     },
+        //     card3:{
+        //       imgSrc: 'kitchen3.jpeg',
+        //       imgAlt: 'kitchen3',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card3',
+        //     },
+        //     card4:{
+        //       imgSrc: 'kitchen4.jpeg',
+        //       imgAlt: 'kitchen4',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card4',
+        //     },
+        //     card5:{
+        //       imgSrc: 'kitchen5.jpeg',
+        //       imgAlt: 'kitchen5',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card5',
+        //     },
+        //     card6:{
+        //       imgSrc: 'kitchen6.jpeg',
+        //       imgAlt: 'kitchen6',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card6',
+        //     },
+        //     card7:{
+        //       imgSrc: 'kitchen7.jpeg',
+        //       imgAlt: 'kitchen7',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card7',
+        //     },
+        //     card8:{
+        //       imgSrc: 'kitchen8.jpeg',
+        //       imgAlt: 'kitchen8',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal kitchen',
+        //       class: 'grid-card card8',
+        //     },
             
-          },
-          'Living Area':{
+        //   },
+        //   'Living Area':{
             
-            card1:{
-              imgSrc: 'livingArea1.jpeg',
-              imgAlt: 'livingArea1',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card1',
-            },
-            card2:{
-              imgSrc: 'livingArea2.jpeg',
-              imgAlt: 'livingArea2',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card2',
-            },
-            card3:{
-              imgSrc: 'livingArea3.jpeg',
-              imgAlt: 'livingArea3',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card3',
-            },
-            card4:{
-              imgSrc: 'livingArea4.jpeg',
-              imgAlt: 'livingArea4',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card4',
-            },
-            card5:{
-              imgSrc: 'livingArea5.jpeg',
-              imgAlt: 'livingArea5',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card5',
-            },
-            card6:{
-              imgSrc: 'livingArea6.jpeg',
-              imgAlt: 'livingArea6',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card6',
-            },
-            card7:{
-              imgSrc: 'livingArea7.jpeg',
-              imgAlt: 'livingArea7',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card7',
-            },
-            card8:{
-              imgSrc: 'livingArea8.jpeg',
-              imgAlt: 'livingArea8',
-              li:{
-                li1:'Decor',
-                li2:'/',
-                li3:'Architecture',
-              },
-              h3:'Minimal living area',
-              class: 'grid-card card8',
-            },
+        //     card1:{
+        //       imgSrc: 'livingArea1.jpeg',
+        //       imgAlt: 'livingArea1',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card1',
+        //     },
+        //     card2:{
+        //       imgSrc: 'livingArea2.jpeg',
+        //       imgAlt: 'livingArea2',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card2',
+        //     },
+        //     card3:{
+        //       imgSrc: 'livingArea3.jpeg',
+        //       imgAlt: 'livingArea3',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card3',
+        //     },
+        //     card4:{
+        //       imgSrc: 'livingArea4.jpeg',
+        //       imgAlt: 'livingArea4',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card4',
+        //     },
+        //     card5:{
+        //       imgSrc: 'livingArea5.jpeg',
+        //       imgAlt: 'livingArea5',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card5',
+        //     },
+        //     card6:{
+        //       imgSrc: 'livingArea6.jpeg',
+        //       imgAlt: 'livingArea6',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card6',
+        //     },
+        //     card7:{
+        //       imgSrc: 'livingArea7.jpeg',
+        //       imgAlt: 'livingArea7',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card7',
+        //     },
+        //     card8:{
+        //       imgSrc: 'livingArea8.jpeg',
+        //       imgAlt: 'livingArea8',
+        //       li:{
+        //         li1:'Decor',
+        //         li2:'/',
+        //         li3:'Architecture',
+        //       },
+        //       h3:'Minimal living area',
+        //       class: 'grid-card card8',
+        //     },
             
-          },
+        //   },
           
-        }
+        // }
     };
-  }
+  },
+  methods:{
+    ...mapMutations(['SET_CATEGORIES_CARDS', 'SET_CARDS', 'SET_CARDS_PAGE2', 'SET_CARDS_PAGE3', 'SET_CARDS_PAGE4', 'SET_PROJECT_TEXT'])
+  },
+
+  computed:{
+    ...mapState(['categoriesCards', 'svg', 'cards', 'cardsPage2', 'cardsPage3', 'cardsPage4', 'projectText']),
+    ...mapGetters(['getCategoriesCards', 'getCards', 'getCardsPage2', 'getCardsPage3', 'getCardsPage4', 'getProjectText'])
+  },
+
+  // created(){
+  //   this.SET_CATEGORIES_CARDS();
+  // }
 }
 </script>
 
@@ -1364,6 +1380,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
@@ -1438,6 +1456,7 @@ button:hover {
 .top__content {
   height: 2028px;
   /* background-image: url(../img/top-photo.png); */
+  background-image: url(./assets/img/top-photo.png);
   background-repeat: no-repeat;
   align-items: center;
   background-position: center;

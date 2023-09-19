@@ -33,7 +33,8 @@
         <div class="main center">
             <div class="main__cards">
                 <div class="main__cards_card border-radius-top-right">
-                <img src="img/kitchen1.png" alt="kitchen1" class="card__img border-radius-top-right">
+                <!-- <img src="img/kitchen1.png" alt="kitchen1" class="card__img border-radius-top-right"> -->
+                <img src="../../assets/img/kitchen1.png" alt="kitchen1" class="card__img border-radius-top-right">
                 <div class="card__info">
                     <div class="card__info_text">
                     <h2>Modern Kitchan</h2>
@@ -51,7 +52,7 @@
                 </div>
                 </div>
                 <div class="main__cards_card border-radius-top-left">
-                <img src="img/kitchen2.png" alt="kitchen2" class="card__img border-radius-top-left">
+                <img src="../../assets/img/kitchen2.png" alt="kitchen2" class="card__img border-radius-top-left">
                 <div class="card__info">
                     <div class="card__info_text">
                     <h2>Modern Kitchan</h2>
@@ -69,7 +70,7 @@
                 </div>
                 </div>
                 <div class="main__cards_card">
-                <img src="img/kitchen3.png" alt="kitchen3" class="card__img border-radius-bottom-right">
+                <img src="../../assets/img/kitchen3.png" alt="kitchen3" class="card__img border-radius-bottom-right">
                 <div class="card__info">
                     <div class="card__info_text">
                     <h2>Modern Kitchan</h2>
@@ -87,7 +88,7 @@
                 </div>
                 </div>
                 <div class="main__cards_card">
-                <img src="img/kitchen4.png" alt="kitchen4" class="card__img border-radius-bottom-left">
+                <img src="../../assets/img/kitchen4.png" alt="kitchen4" class="card__img border-radius-bottom-left">
                 <div class="card__info">
                     <div class="card__info_text">
                     <h2>Modern Kitchan</h2>
