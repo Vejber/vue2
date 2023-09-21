@@ -77,7 +77,6 @@ import FooterComponent from '../FooterComponent.vue';
 
 export default {
     name: 'CategoriesPage',
-    props:['cards'],
     components: {
         HeaderComponent,
         FooterComponent,
@@ -86,11 +85,13 @@ export default {
         return{
             tabs:['Bathroom', 'Bedroom', 'Kitchen', 'Living Area'],
             currentTab: 'Bathroom',
+            cards: this.$store.getters.getCategoriesCards,
             theArray: [],
             
         }
     },
 
+    
     computed:{
         changeArray(){
             Object.keys(this.cards).forEach(key =>{
@@ -120,154 +121,154 @@ export default {
         justify-content: space-evenly;
 }
 
-.categories-tabs button{
-  color: #292F36;
-  text-align: center;
-  font-family: Jost;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125%;
-  letter-spacing: 0.36px;
-  background-color: unset;
-  border: 0px;
-  border-radius: 20px;
-  width: 25%;
-}
-.categories-tabs button:focus{
-  background-color: rgba(205, 162, 116, 1);
-  color: white;
-}
-
-.categories-catalog{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.grid-template{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(10, 1fr);
-  gap: 30px;
-}
-
-.grid-card{
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 25px;
-}
-
-.grid-card h3{
+    .categories-tabs button{
     color: #292F36;
-    font-family: DM Serif Display;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-    letter-spacing: 0.5px;
-}
-
-.grid-card li{
-    color: #4D5053;
+    text-align: center;
     font-family: Jost;
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.22px;
-}
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: 0.36px;
+    background-color: unset;
+    border: 0px;
+    border-radius: 20px;
+    width: 25%;
+    }
+    .categories-tabs button:focus{
+    background-color: rgba(205, 162, 116, 1);
+    color: white;
+    }
 
-.grid-card img{
-    min-height: 87%;
-    object-fit: cover;
-    margin-bottom: 25px;
-}
+    .categories-catalog{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.card__info_text{
-    display: flex;
+    .grid-template{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    gap: 30px;
+    }
+
+    .grid-card{
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+    .grid-card h3{
+        color: #292F36;
+        font-family: DM Serif Display;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        letter-spacing: 0.5px;
+    }
+
+    .grid-card li{
+        color: #4D5053;
+        font-family: Jost;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.22px;
+    }
+
+    .grid-card img{
+        min-height: 87%;
+        object-fit: cover;
+        margin-bottom: 25px;
+    }
+
+    .card__info_text{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card__info_text p{
+        display: flex;
+        width: 70%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card__info_text menu{
+        display: flex;
+    }
+
+
+
+    .card1{
+    grid-row: 1 / span 3;
+    grid-column: 1;
+    }
+    .card2{
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    }
+    .card3{
+    grid-row: 3 / span 3;
+    grid-column: 2;
+    }
+
+    .card4{
+    grid-row: 4 / span 2;
+    grid-column: 1;
+    }
+
+    .card5{
+    grid-row: 6 / span 3;
+    grid-column: 1;
+    }
+
+    .card6{
+    grid-row: 6 / span 2;
+    grid-column: 2;
+    }
+
+    .card7{
+    grid-row: 8 / span 2;
+    grid-column: 2;
+    }
+
+    .card8{
+    grid-row: 9 / span 2;
+    grid-column: 1;
+    }
+
+    .blog-buttons {
+    margin-top: 60px;
+    margin-bottom: 105px;
+    align-self: center;
     align-items: center;
-    justify-content: space-between;
-}
-
-.card__info_text p{
     display: flex;
-    width: 70%;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.card__info_text menu{
-    display: flex;
-}
-
-
-
-.card1{
-  grid-row: 1 / span 3;
-  grid-column: 1;
-}
-.card2{
-  grid-column: 2;
-  grid-row: 1 / span 2;
-}
-.card3{
-  grid-row: 3 / span 3;
-  grid-column: 2;
-}
-
-.card4{
-  grid-row: 4 / span 2;
-  grid-column: 1;
-}
-
-.card5{
-  grid-row: 6 / span 3;
-  grid-column: 1;
-}
-
-.card6{
-  grid-row: 6 / span 2;
-  grid-column: 2;
-}
-
-.card7{
-  grid-row: 8 / span 2;
-  grid-column: 2;
-}
-
-.card8{
-  grid-row: 9 / span 2;
-  grid-column: 1;
-}
-
-.blog-buttons {
-  margin-top: 60px;
-  margin-bottom: 105px;
-  align-self: center;
-  align-items: center;
-  display: flex;
-  gap: 20px;
-}
-.blog-buttons__button {
-  width: 52px;
-  height: 52px;
-  border-radius: 50px;
-  border: 1px solid #CDA274;
-  background-color: #fff;
-  color: #292F36;
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
-  text-transform: capitalize;
-}
-.blog-buttons__button:hover {
-  background-color: #F4F0EC;
-  border: #F4F0EC;
-}
+    gap: 20px;
+    }
+    .blog-buttons__button {
+    width: 52px;
+    height: 52px;
+    border-radius: 50px;
+    border: 1px solid #CDA274;
+    background-color: #fff;
+    color: #292F36;
+    font-family: Jost;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    }
+    .blog-buttons__button:hover {
+    background-color: #F4F0EC;
+    border: #F4F0EC;
+    }
 
 </style>

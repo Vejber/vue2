@@ -18,33 +18,6 @@
         <div class="blog-top blog-details center"></div>
         <div class="#" id="blog">
             <BlogsListComponent class="center"></BlogsListComponent>
-  <!-- <button
-  @click="currentTab = btn"
-  v-for="btn in nameButtons"
-  :key="btn.id"
-  >
-  {{btn}}
-  </button> -->
-
-  <!-- <component :is="changeTabs"></component> -->
-  <!-- <blog
-      :title="changeTabs.title"
-      :img="changeTabs.img"
-      :alt="changeTabs.alt"
-      :p="changeTabs.p"
-      :menu="changeTabs.menu"
-      :blog_details="changeTabs.blog_details"
-      :svg="changeTabs.svg"
-      :p_quote="changeTabs.p_quote"
-      :h2="changeTabs.h2"
-      :p_under_quote="changeTabs.p_under_quote"
-      :li_down="changeTabs.li_down"
-      :down_img="changeTabs.down_img"
-      :down_alt="changeTabs.down_alt"
-      :p_down="changeTabs.p_down"
-  >
-
-  </blog> -->
         </div>
         <FooterComponent></FooterComponent>
     </div>
@@ -52,26 +25,21 @@
 
 <script>
 import HeaderComponent from '../HeaderComponent.vue';
-// import CardsComponent from '../CardsComponent.vue';
 import FooterComponent from '../FooterComponent.vue';
-// import FooterComponent from '../FooterComponent.vue';
 import BlogsListComponent from '../BlogsListComponent.vue';
 export default {
     name: 'BlogDetails',
-    // props:['cards'],
     components: {
         HeaderComponent,
-        // CardsComponent,
         FooterComponent,
         BlogsListComponent
     },
     data(){
         return{}
     }
-    // components: { FooterComponent }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 
 </style>

@@ -1,28 +1,23 @@
 <template>
     <div class="wrapper center">
-        <div class="wrapper-carousel"
-        :style="{'margin-left': + '-' + (100 * currentSlideIndex) + '%'}"
-        >
+        <div class="wrapper-carousel">
             <div class="v-carousel-item"
             v-for="item in this.item_data"
             :key="item.id"
             >
-                <img :src="require('../assets/img/' + item.img)" :alt="item.alt">
+                <img :src="require('../assets/img/' + item.img)" :alt="item.alt" :style="style" class="slider-img">
             </div>
 
         </div>
         <div class="buttons">
-                <button @click="prevSlide">button</button>
-                <button>button</button>
-                <button @click="nextSlide">button</button>
+                <button @click="prevSlide"></button>
+                <button></button>
+                <button @click="nextSlide"></button>
         </div>
     </div>
 </template>
 
 <script>
-// import HeaderComponent from '../HeaderComponent.vue';
-// import FooterComponent from '../FooterComponent.vue';
-// import CarouselComponent from '../CarouselComponent.vue';
 
 export default {
     name: 'CarouselItemComponent',
@@ -30,18 +25,21 @@ export default {
         return{
             item_data: this.$store.getters.getProjectText.sliderItems,
             currentSlideIndex: 0,
+            style:''
         }
     },
 
     methods:{
         prevSlide(){
             if(this.currentSlideIndex > 0){
-                this.currentSlideIndex--
+                this.currentSlideIndex--;
+                this.style = `margin-left:-${200 * this.currentSlideIndex}%;`
             }
         },
 
         nextSlide(){
-            this.currentSlideIndex++
+            this.currentSlideIndex++;
+            this.style = `margin-left:-${200 * this.currentSlideIndex}%;`
         }
     },
 
@@ -50,32 +48,42 @@ export default {
             return this.$store.getters.getProjectText
         }
     }
-
-    // computed:{
-    //     changeArray(){
-    //         Object.keys(this.cards).forEach(key =>{
-    //             if(this.currentTab === key){
-    //                 this.theArray = this.cards[key];
-    //             }
-    //         });
-    //         return this.theArray;
-    //     },
-    // },
 }
 </script>
 
 <style lang="css" scoped>
-    /* .wrapper-carousel{
-        max-width: 800px;
-        overflow: hidden;
-    } */
     .wrapper-carousel{
         display: flex;
-        /* flex-direction: column; */
+        overflow: hidden;
     }
 
     .wrapper{
-        max-width: 800px;
         overflow: hidden;
+    }
+
+    .slider-img{
+        border-radius: 50px;
+    }
+
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .buttons button{
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        border: 2px solid black;
+        background-color: white;
+    }
+
+    .project__text{
+        margin-top: 200px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
     }
 </style>

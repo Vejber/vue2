@@ -29,21 +29,7 @@
                 {{ getProjectText.downParagraph }}
             </p>
         </div>
-        <!-- <div class="container center">
-            <div class="slide center">
-                <img src="../../assets/img/slide.png" alt="slide">
-            </div>
-            <div class="slide center">
-                <img src="../../assets/img/slide.png" alt="slide">
-            </div>
-            <div class="slide center">
-                <img src="../../assets/img/slide.png" alt="slide">
-            </div>
-        </div> -->
-        
-        <!-- <CarouselComponent :carousel_data="projectText.sliderItems"/> -->
-        <CarouselComponent />
-
+        <CarouselItemComponent />
         <FooterComponent></FooterComponent>
     </div>
 </template>
@@ -51,70 +37,30 @@
 <script>
 import HeaderComponent from '../HeaderComponent.vue';
 import FooterComponent from '../FooterComponent.vue';
-import CarouselComponent from '../CarouselComponent.vue';
+import CarouselItemComponent from '../CarouselItemComponent.vue';
 
 export default {
     name: 'ProjectDetailsPage',
-    // props:{
-    //     carousel_data:{
-    //         type: Array,
-    //         default:() => []
-    //     }
-    // },
+
     components: {
         HeaderComponent,
         FooterComponent,
-        CarouselComponent
+        CarouselItemComponent
     },
     data(){
         return{
-            // tabs:['Bathroom', 'Bedroom', 'Kitchen', 'Living Area'],
-            // currentTab: 'Bathroom',
-            // theArray: [],
-            // sliderItems:[
-            //     {id: 1, name: 'img1', img: 'img1'},
-            //     {id: 2, name: 'img2', img: 'img2'},
-            //     {id: 3, name: 'img3', img: 'img3'},
-            // ]
-            
         }
     },
 
     computed:{
-        // getHeader(){
-        //     return this.$store.getters.getProjectText.h1
-        // },
-
-        // getUpperParagraph(){
-        //     return this.$store.getters.getProjectText.upperParagraph
-        // },
-        // getDownParagraph(){
-        //     return this.$store.getters.getProjectText.downParagraph
-        // },
-
         getProjectText(){
             return this.$store.getters.getProjectText
         }
     }
-
-    // computed:{
-    //     changeArray(){
-    //         Object.keys(this.cards).forEach(key =>{
-    //             if(this.currentTab === key){
-    //                 this.theArray = this.cards[key];
-    //             }
-    //         });
-    //         return this.theArray;
-    //     },
-    // },
 }
 </script>
 
 <style lang="css" scoped>
-/* .app{
-    display: flex;
-    flex-direction: column;
-} */
 .blog-top__project{
     background-image: url(../../assets/img/projectDetailsTop.png);
 }
@@ -133,6 +79,33 @@ export default {
   scroll-snap-align: start;
   width: 300px;
   text-align: center;
+}
+
+.project__text{
+    margin-top: 200px;
+    /* width: 660px; */
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.project__text h1{
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 62.5px */
+    letter-spacing: 1px;
+}
+
+.project__text p{
+    font-family: Jost;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 33px */
+    letter-spacing: 0.22px;
 }
 
 </style>

@@ -136,7 +136,7 @@
             <div class="main__news center" id="news" style="margin-top: unset;">
             <h2>Articles & News</h2>
             <p>It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
-            <CardsComponent :cards="cards"/>
+            <CardsComponent />
             </div>
         </div>
         <FooterComponent></FooterComponent>
@@ -147,10 +147,8 @@
 import HeaderComponent from '../HeaderComponent.vue';
 import CardsComponent from '../CardsComponent.vue';
 import FooterComponent from '../FooterComponent.vue';
-// import FooterComponent from '../FooterComponent.vue';
 export default {
     name: 'IndexPage',
-    props:['cards'],
     components: {
         HeaderComponent,
         CardsComponent,
@@ -159,10 +157,9 @@ export default {
     data(){
         return{}
     }
-    // components: { FooterComponent }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 
 </style>

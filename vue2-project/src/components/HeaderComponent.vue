@@ -9,9 +9,10 @@
         </div>
         </a>
         <menu class="header__menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            
+            <li><router-link to="/indexpage">Home</router-link></li>
+            <li><router-link to="/projectdetailspage">Project</router-link></li>
+            <li><router-link to="/blogpage">Blog</router-link></li>
         </menu> 
     </header>
 </template>

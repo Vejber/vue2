@@ -5,17 +5,22 @@
     <!-- <BlogDetailsPage /> -->
     <!-- <CategoriesPage :cards="categoriesCards"/> -->
     <!-- <ProjectDetailsPage :carousel_data="projectText.sliderItems"/> -->
-    <ProjectDetailsPage />
+    <!-- <ProjectDetailsPage /> -->
+    <!-- <HeaderComponent/> -->
+    <!-- <FooterComponent /> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import { mapMutations, mapState, mapGetters } from 'vuex';
+// import HeaderComponent from './components/HeaderComponent.vue';
+// import FooterComponent from './components/FooterComponent.vue';
 // import CategoriesPage from './components/pages/CategoriesPage.vue';
 // import IndexPage from './components/pages/IndexPage.vue';
 // import BlogPage from './components/pages/BlogPage.vue';
 // import BlogDetailsPage from './components/pages/BlogDetailsPage.vue';
-import ProjectDetailsPage from './components/pages/ProjectDetailsPage.vue';
+// import ProjectDetailsPage from './components/pages/ProjectDetailsPage.vue';
 // import image from '@/assets/img/'
 
 export default {
@@ -25,7 +30,9 @@ export default {
     // BlogPage
     // BlogDetailsPage,
     // CategoriesPage,
-    ProjectDetailsPage
+    // ProjectDetailsPage
+    // HeaderComponent,
+    // FooterComponent
 },
 
   data() {
@@ -1365,6 +1372,11 @@ export default {
     ...mapState(['categoriesCards', 'svg', 'cards', 'cardsPage2', 'cardsPage3', 'cardsPage4', 'projectText']),
     ...mapGetters(['getCategoriesCards', 'getCards', 'getCardsPage2', 'getCardsPage3', 'getCardsPage4', 'getProjectText'])
   },
+
+  created () {
+    this.$router.push({ name: 'indexpage' })
+    // this.setPaymentsListData(this.fetchData())
+  }
 
   // created(){
   //   this.SET_CATEGORIES_CARDS();

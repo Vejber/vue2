@@ -130,6 +130,6 @@ import BlogDetailsComponent from './BlogDetailsComponent.vue';
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 
 </style>

@@ -52,7 +52,7 @@
         <div class="main center">
         <div class="main__news center" style="margin-top: unset;" id="news">
             <h2 class="text-left">Articles & News</h2>
-            <CardsComponent :cards="cards"/>
+            <CardsComponent />
         </div>
         <div class="blog-buttons">
             <button class="blog-buttons__button" >01</button>
@@ -73,7 +73,6 @@ import CardsComponent from '../CardsComponent.vue';
 import FooterComponent from '../FooterComponent.vue';
 export default {
     name: 'BlogPage',
-    props:['cards'],
     components: {
         HeaderComponent,
         CardsComponent,
@@ -85,6 +84,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 
 </style>

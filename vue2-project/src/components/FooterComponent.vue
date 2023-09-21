@@ -24,10 +24,11 @@
     <div class="footer__pages">
       <h2>Pages</h2>
       <menu>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Project</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="blog-details.html">Blog Details</a></li>
+        <li><router-link to="/indexpage">Home</router-link></li>
+        <li><router-link to="/blogpage">Blog</router-link></li>
+        <li><router-link to="/blogdetails">Blog Details</router-link></li>
+        <li><router-link to="/categoriespage">Categories</router-link></li>
+        <li><router-link to="/projectdetailspage">Project</router-link></li>
       </menu>
     </div>
     <div class="footer__contacts">
@@ -51,6 +52,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 
 </style>
