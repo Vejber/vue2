@@ -72,6 +72,7 @@ export default {
         gap: 10px;
         margin-top: 20px;
     }
+    
     .buttons button{
         border-radius: 50%;
         width: 10px;

@@ -384,10 +384,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
-                        // imgSrc: 'vue2-project/src/assets/img/kitchenDesign.png',
-                        // imgSrc: '../assets/img/kitchenDesign.png',
-                        // imgSrc: '/Users/zenecka/vue2/vue2-project/src/assets/img/kitchenDesign.png',
                         imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
@@ -410,8 +406,6 @@ export default new Vuex.Store({
                                             {
                                                 href: '#',
                                                 class: 'card__button',
-                                                // svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
                                             }
                                         
                                     }
@@ -427,7 +421,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
                         imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
@@ -466,7 +459,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
                         imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
@@ -505,7 +497,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
                         imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
@@ -544,7 +535,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
                         imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
@@ -583,7 +573,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
                         imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
@@ -624,7 +613,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
                         imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
@@ -647,8 +635,6 @@ export default new Vuex.Store({
                                             {
                                                 href: '#',
                                                 class: 'card__button',
-                                                // svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
                                             }
                                         
                                     }
@@ -664,7 +650,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
                         imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
@@ -703,7 +688,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
                         imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
@@ -742,7 +726,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
                         imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
@@ -781,7 +764,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
                         imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
@@ -820,7 +802,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
                         imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
@@ -861,7 +842,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
                         imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
@@ -884,8 +864,6 @@ export default new Vuex.Store({
                                             {
                                                 href: '#',
                                                 class: 'card__button',
-                                                // svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
                                             }
                                         
                                     }
@@ -901,7 +879,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
                         imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
@@ -940,7 +917,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
                         imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
@@ -979,7 +955,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
                         imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
@@ -1018,7 +993,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
                         imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
@@ -1057,7 +1031,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
                         imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',
@@ -1098,7 +1071,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign.png',
                         imgSrc: 'kitchenDesign.png',
                         imgAlt: 'kitchenDesign',
                         imgClass: 'card__img-trio',
@@ -1121,8 +1093,6 @@ export default new Vuex.Store({
                                             {
                                                 href: '#',
                                                 class: 'card__button',
-                                                // svg: this.svg,
-                                                // `<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="beige-white" cx="26" cy="26.267" r="26" fill="#F4F0EC"/><path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
                                             }
                                         
                                     }
@@ -1138,7 +1108,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingRoomDesign.png',
                         imgSrc: 'livingRoomDesign.png',
                         imgAlt: 'livingRoomDesign',
                         imgClass: 'card__img-trio',
@@ -1177,7 +1146,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign.png',
                         imgSrc: 'interiorDesign.png',
                         imgAlt: 'interiorDesign',
                         imgClass: 'card__img-trio',
@@ -1216,7 +1184,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/kitchenDesign2.png',
                         imgSrc: 'kitchenDesign2.png',
                         imgAlt: 'kitchenDesign2',
                         imgClass: 'card__img-trio',
@@ -1255,7 +1222,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/livingDesign2.png',
                         imgSrc: 'livingDesign2.png',
                         imgAlt: 'livingDesign2',
                         imgClass: 'card__img-trio',
@@ -1294,7 +1260,6 @@ export default new Vuex.Store({
                 child1:
                     {
                         divImgClass: 'main__cards_card_imgs',
-                        // imgSrc: 'assets/img/interiorDesign2.png',
                         imgSrc: 'interiorDesign2.png',
                         imgAlt: 'interiorDesign2',
                         imgClass: 'card__img-trio',

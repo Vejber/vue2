@@ -83,7 +83,6 @@ export default {
 
 .project__text{
     margin-top: 200px;
-    /* width: 660px; */
     gap: 20px;
     display: flex;
     flex-direction: column;

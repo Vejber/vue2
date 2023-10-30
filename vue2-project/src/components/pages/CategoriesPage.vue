@@ -119,7 +119,7 @@ export default {
         border-radius: 20px;
         width: 40vw;
         justify-content: space-evenly;
-}
+    }
 
     .categories-tabs button{
     color: #292F36;
@@ -135,6 +135,7 @@ export default {
     border-radius: 20px;
     width: 25%;
     }
+
     .categories-tabs button:focus{
     background-color: rgba(205, 162, 116, 1);
     color: white;
@@ -147,10 +148,10 @@ export default {
     }
 
     .grid-template{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(10, 1fr);
-    gap: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        gap: 30px;
     }
 
     .grid-card{
@@ -204,8 +205,6 @@ export default {
         display: flex;
     }
 
-
-
     .card1{
     grid-row: 1 / span 3;
     grid-column: 1;
@@ -252,6 +251,7 @@ export default {
     display: flex;
     gap: 20px;
     }
+
     .blog-buttons__button {
     width: 52px;
     height: 52px;
@@ -266,6 +266,7 @@ export default {
     line-height: 150%;
     text-transform: capitalize;
     }
+    
     .blog-buttons__button:hover {
     background-color: #F4F0EC;
     border: #F4F0EC;
